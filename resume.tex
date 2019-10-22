@@ -1,0 +1,266 @@
+% !TEX TS-program = xelatex
+% !TEX encoding = UTF-8
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Resume template - https://github.com/lquesada/resume
+%% Check that URL for licensing information.
+%% 
+%% Copyright (c) 2019, Luis Quesada Torres -
+%% https://github.com/lquesada | www.luisquesada.com
+%%
+%% Heavily based on (and old version of) the SIMPLE-RESUME-CV
+%% by zachscrivena, which is unlicensed.
+%% <https://github.com/zachscrivena/simple-resume-cv>
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% INSTRUCTIONS FOR COMPILING THIS DOCUMENT ("resume.tex")
+%% TEX ---(XeLaTeX)---> PDF:
+%%
+%% Method 1: Use latexmk for fully automated document generation:
+%%   latexmk -xelatex "CV.tex"
+%%   (add the -pvc switch to automatically recompile on changes)
+%%
+%% Method 2: Use XeLaTeX directly:
+%%   xelatex "CV.tex"
+%%   (run multiple times to resolve cross-references if needed)
+%%
+%% PDF ---(pdf2htmlEX)> HTML:
+%%
+%% Install pdf2htmlEX from https://github.com/coolwanglu/pdf2htmlEX, then:
+%%   alias pdf2htmlEX='docker run -ti --rm -v `pwd`:/pdf bwits/pdf2htmlex pdf2htmlEX'
+%%   pdf2htmlEX --zoom 1.5 --process-outline 0 resume.pdf
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Note: Search "SIZEMARKER" to find settings you can tweak to
+%       make the page, the margins, or the text bigger or smaller.
+
+
+% SIZEMARKER: You may want to replace "letterpaper" with "a4paper", but when
+% exporting to html, letterpaper can be printed in both letter and A4 sheets
+% of paper.
+\documentclass[letterpaper,10pt,oneside]{article}
+
+% Long table for page layout.
+\usepackage{longtable}
+\usepackage{calc}
+
+% SIZEMARKER: Page margins
+\usepackage[
+left=0.40in,
+right=0.60in,
+top=0.75in,
+bottom=0.65in,
+nohead,
+includefoot]{geometry}
+
+% Hyphenation: Disabled.
+\usepackage[none]{hyphenat}
+
+% XeLaTeX packages.
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX}
+\usepackage{xunicode}
+\usepackage{xltxtra}
+
+
+\renewcommand*{\familydefault}{\sfdefault}
+
+
+% Symbols (unicode).
+\newcommand{\BulletSymbol}{{\char"2022}}
+
+% PDF settings and properties.
+
+% Headers and footers: Blank header, page number in footer.
+% Commented: I don't want the page number in footer.
+\makeatletter
+\def\ps@plain{%
+\def\@oddhead{}%
+\def\@evenhead{}%
+\def\@oddfoot{}%
+\def\@evenfoot{}}
+%\def\@oddfoot{\footnotesize\hfill{Page}~{\thepage}~of~\pageref{LastPage}\hfill}%
+%\def\@evenfoot{\footnotesize\hfill{Page}~{\thepage}~of~\pageref{LastPage}\hfill}}
+\makeatother
+
+\pagestyle{plain}
+
+% Paragraph style: No indentation.
+\setlength{\parindent}{0in}
+
+% SIZEMARKER: Line spacing
+\renewcommand{\baselinestretch}{1.27}
+
+\newcommand{\DatestampY}[1]{#1}
+
+% Macro: title (name).
+\renewcommand{\title}[1]{%
+\pdfbookmark[1]{#1}{#1}%
+\par\begin{center}%
+\par\begin{huge}%
+\textbf{#1}%
+\par\end{huge}%
+\par\end{center}%
+\par\vspace{-1.5em}\par} % SIZEMARKER: Title spacing
+
+% Macro: subtitle (personal information below name).
+\newenvironment{subtitle}
+{\par\begin{center}%
+\par\begin{normalsize}}
+{\par\end{normalsize}%
+\par\end{center}\par
+\par\vspace{-2em}\par} % SIZEMARKER: Subtitle spacing
+
+% Macro: body (rest of the document).
+\newenvironment{body}
+{\par\par
+\begin{longtable}{p{0.142\textwidth}p{0.807\textwidth}}}
+{\par\end{longtable}\par}
+
+% Macro: section (new section for Education, Research Experience, etc.).
+\renewcommand{\section}[3]{\\[-0.9cm]\pdfbookmark[2]{#2}{#3}\\%
+\raggedleft  %align to the right
+{\fontsize{9.5pt}{9.5pt}\selectfont\bfseries\raggedright%
+\MakeUppercase{#1}}&}
+
+% SIZEMARKER: SmallEntryGap is a small vertical gap within a long entry
+\newcommand{\SmallEntryGap}{\par\vspace{0.1em}\par} 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% PREAMBLE.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% CV Info (to be customized).
+\newcommand{\CVTitle}{Luis Quesada Torres}
+\newcommand{\CVNote}{CV compiled on {\today}}
+
+% PDF settings and properties.
+\usepackage{hyperref}
+\hypersetup{
+pdftitle={\CVTitle},
+pdfauthor={Luis Quesada Torres},
+pdfcreator={},
+pdfproducer={},
+pdfkeywords={},
+pdfpagemode={},
+bookmarks=true,
+unicode=true,
+bookmarksopen=true,
+pdfstartview=FitH,
+pdfpagelayout=OneColumn,
+pdfpagemode=UseOutlines,
+hidelinks,
+breaklinks,
+colorlinks=true,
+linkcolor=blue,
+citecolor=blue,
+filecolor=blue,
+urlcolor=blue
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% ACTUAL DOCUMENT.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+
+%%%%%%%%%%%%%%%
+% TITLE BLOCK %
+%%%%%%%%%%%%%%%
+
+\title{Luis Quesada Torres}
+
+\begin{subtitle}
+\begin{large}\textbf{Engineering Manager, Tech Lead, Software and Systems Engineer}\end{large}
+\par
+\href{https://www.luisquesada.com}{www.luisquesada.com} \,\BulletSymbol\, Contact via \href{https://www.linkedin.com/in/elezeta}{www.linkedin.com/in/elezeta} \,\BulletSymbol\, Updated \today
+
+\end{subtitle}
+
+\begin{body}
+
+%%%%%%%%%%%%
+%% SKILLS %%
+%%%%%%%%%%%%
+
+\section{Skills}{Skills}{PDF:Skills}
+
+Team development: Experienced in team building, coaching, and career advice
+
+Program management: Expert in planning, coordination, and execution
+
+Facilitation: Seasoned technical trainer and skilled presenter
+
+Systems: Expert in scalability and reliability of large-scale distributed systems
+
+Programming: Proficient in Go and Python; fluent in Java, Bash scripting, and SQL
+
+Languages: Speaks Spanish, English, German, Esperanto, and Swiss German
+
+%%%%%%%%%%%%%%%%
+%% EXPERIENCE %%
+%%%%%%%%%%%%%%%%
+
+\section{Experience}{Experience}{PDF:Experience}
+
+Google, Z\"urich, Switzerland\newline
+\phantom{w}Machine Learning, Cloud, SRE: Engineering Manager\textrightarrow Engineering Manager II\hfill \DatestampY{2018}--now\setlength{\dimen0}{\widthof{now}}\hspace{-\dimen0}\hphantom{\DatestampY{2000}} \newline
+\phantom{ww}Rebuilt a team from four to nine members, grew it to thirteen, and trained a tech lead\newline
+\phantom{ww}Improved the efficiency of artificial intelligence accelerators by 40\% across ten products\newline
+\phantom{ww}Led reliability efforts across a large developer organization\newline
+\phantom{w}Datacenters, Compute, SRE: Tech Lead/Engineering Manager\hfill \DatestampY{2017}--\DatestampY{2018} \newline
+\phantom{ww}Built a team with seven reports, and trained a manager and two tech leads\newline
+\phantom{ww}Sped up a critical worldwide datacenter infrastructure project by one year\newline
+\phantom{ww}Published \href{https://landing.google.com/sre/workbook/chapters/overload/}{the chapter on managing overload} in \textit{\href{https://landing.google.com/sre/books/}{The Site Reliability Workbook}}\newline
+\phantom{ww}Published tech talks on \textit{\href{https://youtu.be/d7nAGI_NZPk}{the Paxos algorithm}} and \textit{\href{https://youtu.be/dhTVVWzpc4Q}{the Google production environment}}\newline
+\phantom{w}Storage, Apps, SRE: Intern\textrightarrow Software Engineer III\textrightarrow Senior Software Engineer\textrightarrow Tech Lead\hfill \DatestampY{2014}--\DatestampY{2017} \newline
+\phantom{ww}Rebuilt a team from three to eight members and trained a tech lead\newline
+\phantom{ww}Decreased the cost of a storage service with +700M users by 75\%\newline
+\phantom{ww}Pioneered the design and execution of time-sensitive production changes
+
+\SmallEntryGap
+
+Universidad de Granada, Granada, Spain\newline
+\phantom{w}Professor Trainee \textendash\ Department of Computer Science and Artificial Intelligence\hfill \DatestampY{2010}--\DatestampY{2014} \newline
+\phantom{ww}\href{https://doi.org/10.1142/S0218194014500375}{Researched} and \href{https://github.com/lquesada/ModelCC}{developed} a model-based parser generator \newline
+\phantom{ww}\href{https://doi.org/10.1142/S0129065712500190}{Researched} and \href{https://github.com/lquesada/MotionTracking}{developed} markerless monocular 3-DOF motion tracking \newline
+\phantom{ww}Directed a Master Thesis on \href{https://github.com/lquesada/ADAgio}{music prototyping languages}, Best Thesis Award
+
+%%%%%%%%%%%%%%%
+%% EDUCATION %%
+%%%%%%%%%%%%%%%
+
+\section{Education}{Education}{PDF:Education}
+
+Universidad de Granada, Granada, Spain\newline
+\phantom{w}MRes in Soft Computing and Intelligent Systems, GPA 9.3/10 \hfill \DatestampY{2009}--\DatestampY{2010} \newline
+\phantom{w}BSc in Information Systems Engineering, GPA 8.7/10, First of Class \hfill \DatestampY{2009}--\DatestampY{2010} \newline
+\phantom{w}MSc in Computer Science, GPA 9.2/10, National Award, First of Class, Distinction \hfill \DatestampY{2007}--\DatestampY{2009} \newline
+\phantom{ww}\href{https://doi.org/10.5220/0003013403330336}{Researched} and \href{https://github.com/lquesada/JSimil}{developed} a Java code clone detector as Thesis, Best Thesis Award \newline
+\phantom{w}BSc in Computer Systems Engineering, GPA 8.7/10, First of Class \hfill \DatestampY{2004}--\DatestampY{2007}
+
+%%%%%%%%%%%%%%%
+%% INTERESTS %%
+%%%%%%%%%%%%%%%
+
+\section{Interests}{Interests}{PDF:Open Source}
+
+Videogame development: Programmed demos in \href{https://github.com/lquesada/LifoSource}{PHP}, \href{https://github.com/lquesada/SpaceARMy}{C}, \href{https://github.com/lquesada/RogueCave}{Java}, \href{https://github.com/lquesada/PhysicsEngine}{GameMaker}, and \href{https://github.com/lquesada/Cavernal}{Go}
+
+Languages: Assembled a \href{https://github.com/lquesada/Lingvaro}{cross-language dictionary} and wrote an \href{https://github.com/lquesada/ExtendedUSKeyboardLayout}{extended US keymap}
+
+Music: Published \href{https://github.com/lquesada/music}{musical compositions and recordings}, plays guitar and piano, and sings
+
+3D modeling: Published \href{https://github.com/lquesada/voxel-3d-models}{voxel-based 3D models and tools}
+
+Sport: Skateboarding, surf skating, bouldering, archery, and laser tag
+
+\end{body}
+
+\end{document}
