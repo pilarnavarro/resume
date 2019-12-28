@@ -40,6 +40,7 @@
 % SIZEMARKER: You may want to replace "letterpaper" with "a4paper", but when
 % exporting to html, letterpaper can be printed in both letter and A4 sheets
 % of paper.
+% SIZEMARKER: You may also want to tweak the font size.
 \documentclass[letterpaper,10pt,oneside]{article}
 
 % Long table for page layout.
@@ -48,10 +49,10 @@
 
 % SIZEMARKER: Page margins
 \usepackage[
-left=0.40in,
-right=0.60in,
-top=0.75in,
-bottom=0.65in,
+left=0.45in,
+right=0.65in,
+top=0.85in,
+bottom=0.85in,
 nohead,
 includefoot]{geometry}
 
@@ -63,7 +64,6 @@ includefoot]{geometry}
 \defaultfontfeatures{Ligatures=TeX}
 \usepackage{xunicode}
 \usepackage{xltxtra}
-
 
 \renewcommand*{\familydefault}{\sfdefault}
 
@@ -91,43 +91,36 @@ includefoot]{geometry}
 \setlength{\parindent}{0in}
 
 % SIZEMARKER: Line spacing
-\renewcommand{\baselinestretch}{1.27}
+\renewcommand{\baselinestretch}{1.3}
 
 \newcommand{\DatestampY}[1]{#1}
 
-% Macro: title (name).
-\renewcommand{\title}[1]{%
-\pdfbookmark[1]{#1}{#1}%
-\par\begin{center}%
-\par\begin{huge}%
-\textbf{#1}%
-\par\end{huge}%
-\par\end{center}%
-\par\vspace{-1.5em}\par} % SIZEMARKER: Title spacing
-
-% Macro: subtitle (personal information below name).
-\newenvironment{subtitle}
-{\par\begin{center}%
-\par\begin{normalsize}}
-{\par\end{normalsize}%
-\par\end{center}\par
-\par\vspace{-1.5em}\par} % SIZEMARKER: Subtitle spacing
-
 % Macro: body (rest of the document).
+% SIZEMARKER: Left vs. right columns
 \newenvironment{body}
 {\par\par
 \begin{longtable}{p{0.142\textwidth}p{0.807\textwidth}}}
 {\par\end{longtable}\par}
 
 % Macro: section (new section for Education, Research Experience, etc.).
-\renewcommand{\section}[3]{\\[-0.9cm]\pdfbookmark[2]{#2}{#3}\\%
+% SIZEMARKER: The separation here is between sections.
+\renewcommand{\section}[3]{\\[-0.6cm]\pdfbookmark[2]{#2}{#3}\\%
 \raggedleft  %align to the right
 {\fontsize{9.5pt}{9.5pt}\selectfont\bfseries\raggedright%
 \MakeUppercase{#1}}&}
 
 % SIZEMARKER: SmallEntryGap is a small vertical gap within a long entry
-\newcommand{\SmallEntryGap}{\par\vspace{0.1em}\par} 
+\newcommand{\SmallEntryGap}{\par\vspace{0.27em}\par} 
 
+% Round image
+\usepackage{tikz}
+
+\newcommand{\roundpic}[4][]{
+\tikz\node [circle, minimum width = #2,
+path picture = {
+\node [#1] at (path picture bounding box.center) {
+\includegraphics[width=#3]{#4}};
+}] {};}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -174,16 +167,16 @@ urlcolor=blue
 % TITLE BLOCK %
 %%%%%%%%%%%%%%%
 
-\title{Luis Quesada Torres}
-
-\begin{subtitle}
-\begin{large}\textbf{Engineering Manager, Tech Lead, Software and Systems Engineer}\end{large}
-\par
-\href{https://www.luisquesada.com}{www.luisquesada.com} \,\BulletSymbol\, Contact via \href{https://www.linkedin.com/in/luisquesadatorres}{www.linkedin.com/in/luisquesadatorres} \,\BulletSymbol\, Updated \today
-
-\end{subtitle}
-
 \begin{body}
+
+\raggedleft\roundpic{2.15cm}{2.15cm}{pic.jpg}
+&
+\vspace{-2.54cm} \par
+\huge{\textbf{Luis Quesada Torres}} \par
+\large{\textbf{Engineering Manager, Tech Lead, Software and Systems Engineer}} \par
+\normalsize{\href{https://www.luisquesada.com}{www.luisquesada.com} \textendash\ Contact via \href{https://www.linkedin.com/in/luisquesadatorres}{linkedin.com/in/luisquesadatorres}}
+% SIZEMARKER: Separation between header and content
+\vspace{0.6cm}
 
 %%%%%%%%%%%%%%%%
 %% EXPERIENCE %%
@@ -213,7 +206,7 @@ urlcolor=blue
 
 \SmallEntryGap
 
-\textbf{Universidad de Granada}, Department of Computer Science, Spain\textemdash\ Professor Trainee\hfill \DatestampY{2010}--\DatestampY{2014} \newline
+\textbf{Universidad de Granada}, Department of Computer Science, Spain \textemdash\ Professor Trainee\hfill \DatestampY{2010}--\DatestampY{2014} \newline
 \phantom{w}\href{https://doi.org/10.1142/S0218194014500375}{Researched} and \href{https://github.com/lquesada/ModelCC}{developed} a model-based parser generator \newline
 \phantom{w}\href{https://doi.org/10.1142/S0129065712500190}{Researched} and \href{https://github.com/lquesada/MotionTracking}{developed} markerless monocular 3-DOF motion tracking \newline
 \phantom{w}Directed a Master Thesis on \href{https://github.com/lquesada/ADAgio}{music prototyping languages}, Best Thesis Award
@@ -235,7 +228,7 @@ urlcolor=blue
 \SmallEntryGap
 
 \textbf{MSc in Computer Science}, Universidad de Granada, Spain\hfill \DatestampY{2007}--\DatestampY{2009} \newline
-\phantom{w}Grade Point Average of 9.2/10, First of Class, National Award, and Academic Distinction \newline
+\phantom{w}Grade Point Average of 9.2/10, First of Class, National Award, and Distinction \newline
 \phantom{w}\href{https://doi.org/10.5220/0003013403330336}{Researched} and \href{https://github.com/lquesada/JSimil}{developed} a Java code clone detector as Thesis, Best Thesis Award
 
 \SmallEntryGap
@@ -251,11 +244,19 @@ urlcolor=blue
 
 Developed videogame prototypes in \href{https://github.com/lquesada/LifoSource}{PHP}, \href{https://github.com/lquesada/SpaceARMy}{C}, \href{https://github.com/lquesada/RogueCave}{Java}, \href{https://github.com/lquesada/PhysicsEngine}{GameMaker}, and \href{https://github.com/lquesada/Cavernal}{Go}
 
+\SmallEntryGap
+
 Assembled a \href{https://github.com/lquesada/Lingvaro}{dictionary} cross Spanish, English, German, Esperanto, and Swiss German
+
+\SmallEntryGap
 
 Composed and produced \href{https://github.com/lquesada/music}{music demos}, plays guitar and piano, and sings
 
+\SmallEntryGap
+
 Published \href{https://github.com/lquesada/voxel-3d-models}{voxel-based 3D models and tools}
+
+\SmallEntryGap
 
 Skateboarding, surf skating, bouldering, archery, and laser tag
 
