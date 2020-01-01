@@ -7,7 +7,7 @@ Read the source .tex file for instructions on how to compile to .pdf or .html.
 
 Check [resume.pdf](resume.pdf) for a compiled version.
 
-This resume is heavily based on (and old version of) the [https://github.com/zachscrivena/simple-resume-cv](SIMPLE-RESUME-CV) by zachscrivena, which is unlicensed.
+This resume is heavily based on (an old version of) the [https://github.com/zachscrivena/simple-resume-cv](SIMPLE-RESUME-CV) by zachscrivena, which is unlicensed.
 
 # What makes an awesome resume, in my humble opinoin?
   - **Tailored to the intended audience and concrete position**. The same resume does not fit several positions
@@ -15,8 +15,8 @@ This resume is heavily based on (and old version of) the [https://github.com/zac
   - **Only the shiniest successes**. Your high school grades, those three degrees you abandoned before finishing the one you liked, that entry level job you had, or your low grade point average can read as failures
   - **Emphasis on the skills, work, and impact rather than the roles**. Being CEO + Founder + CTO + Engineer at your company is worth nothing by itself
   - **Provide evidence of publications, or projects**. "4 out of 5 stars in Java coding" does not provide as good of an insight on your skills than actual code
-  - **Correct amount of personal information**. Last updated date can help avoid misunderstandings, and a method to contact you is probably a good idea. A resume should not contain pictures, date of birth, nationality, and marital status
-  - **Truthful**. You may be hired by many companies if you lie in your resume. "May" and "many" because you'll likely be fired often if you lie.
+  - **Correct amount of personal information**. Last updated date can help avoid misunderstandings, and a method to contact you is probably a good idea. It is not mandatory for a resume to contain pictures, date of birth, nationality, or marital status
+  - **Truthful**. You may be hired if you lie in your resume, but you may as well be fired if you do so.
 
 # License
 
