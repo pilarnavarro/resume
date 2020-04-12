@@ -49,10 +49,10 @@
 
 % SIZEMARKER: Page margins
 \usepackage[
-left=0.45in,
+left=0.37in,
 right=0.65in,
 top=0.85in,
-bottom=0.85in,
+bottom=0.45in,
 nohead,
 includefoot]{geometry}
 
@@ -88,7 +88,7 @@ includefoot]{geometry}
 \setlength{\parindent}{0in}
 
 % SIZEMARKER: Line spacing
-\renewcommand{\baselinestretch}{1.27}
+\renewcommand{\baselinestretch}{1.4}
 
 \newcommand{\DatestampY}[1]{#1}
 
@@ -96,18 +96,18 @@ includefoot]{geometry}
 % SIZEMARKER: Left vs. right columns
 \newenvironment{body}
 {\par\par
-\begin{longtable}{p{0.142\textwidth}p{0.807\textwidth}}}
+\begin{longtable}{p{0.125\textwidth}p{0.84\textwidth}}}
 {\par\end{longtable}\par}
 
 % Macro: section (new section for Education, Research Experience, etc.).
 % SIZEMARKER: The separation here is between sections.
-\renewcommand{\section}[3]{\\[-0.6cm]\pdfbookmark[2]{#2}{#3}\\%
+\renewcommand{\section}[3]{\\[-0.7cm]\pdfbookmark[2]{#2}{#3}\\%
 \raggedleft  %align to the right
 {\fontsize{9.5pt}{9.5pt}\selectfont\bfseries\raggedright%
 \MakeUppercase{#1}}&}
 
 % SIZEMARKER: SmallEntryGap is a small vertical gap within a long entry
-\newcommand{\SmallEntryGap}{\par\vspace{0.27em}\par} 
+\newcommand{\SmallEntryGap}{\par\vspace{0.38em}\par} 
 
 % Round image
 \usepackage{tikz}
@@ -166,30 +166,34 @@ urlcolor=blue
 
 \begin{body}
 
-\raggedleft\roundpic{2.15cm}{2.15cm}{pic.jpg}
+\raggedleft\roundpic{1.85cm}{1.85cm}{pic.jpg}
 &
 \vspace{-2.54cm} \par
-\normalsize{}\phantom{w}\huge{\textbf{Luis Quesada Torres}} \par
-\normalsize{}\phantom{w}\large{\textbf{Engineering Manager, Tech Lead, Software and Systems Engineer}} \par
-\normalsize{}\phantom{w}\normalsize{\href{https://www.luisquesada.com}{www.luisquesada.com} \textendash\ Contact via \href{https://www.linkedin.com/in/luisquesadatorres}{linkedin.com/in/luisquesadatorres}}
+\huge{\textbf{Luis Quesada Torres}} \par
+\large{\textbf{Engineering Manager, Tech Lead, Software and Systems Engineer}} \par
+\normalsize{\href{https://www.luisquesada.com}{www.luisquesada.com} \textemdash\ Contact via \href{https://www.linkedin.com/in/luisquesadatorres}{linkedin.com/in/luisquesadatorres}}
 % SIZEMARKER: Separation between header and content
-\vspace{0.6cm}
+\vspace{0.1cm}
 
 %%%%%%%%%%%%%%%%
 %% EXPERIENCE %%
 %%%%%%%%%%%%%%%%
 
-\section{Experience}{Experience}{PDF:Experience}
+\section{Industry}{Industry}{PDF:Industry}
 
-\textbf{Google}, Cloud Machine Learning SRE, Switzerland \textemdash\ Engineering Manager II\hfill \DatestampY{2018}--now\setlength{\dimen0}{\widthof{now}}\hspace{-\dimen0}\hphantom{\DatestampY{2000}} \newline
+\textbf{Engineering Manager II}. Google, Cloud Artificial Intelligence Solutions SRE\hfill \DatestampY{2020}--now\setlength{\dimen0}{\widthof{now}}\hspace{-\dimen0}\hphantom{\DatestampY{2000}} \newline
+\phantom{w}Designed and led the development of a capacity management solution for 40+ products\newline
+\phantom{w}Published a tech talk on \textit{\href{https://youtu.be/pOo0oKNM9I8}{the complexities of capacity management for large services}}
+\SmallEntryGap
+
+\textbf{Engineering Manager}. Google, Cloud Machine Learning SRE\hfill \DatestampY{2018}--\DatestampY{2020} \newline
 \phantom{w}Grew the team from four to fifteen members, trained a manager and two tech leads\newline
 \phantom{w}Improved the efficiency of artificial intelligence accelerators by 40\% across ten products\newline
 \phantom{w}Partnered with NVIDIA to advertise \href{https://cloud.google.com/blog/products/ai-machine-learning/your-ml-workloads-cheaper-and-faster-with-the-latest-gpus}{lower-cost faster artificial intelligence accelerators}\newline
 \phantom{w}Led reliability efforts across a large developer organization
-
 \SmallEntryGap
 
-\textbf{Google}, Compute Datacenters SRE, Switzerland \textemdash\ Engineering Manager\hfill \DatestampY{2017}--\DatestampY{2018} \newline
+\textbf{Tech Lead/Engineering Manager}. Google, Compute Datacenters SRE\hfill \DatestampY{2017}--\DatestampY{2018} \newline
 \phantom{w}Built the team with seven members, and trained a manager and two tech leads\newline
 \phantom{w}Sped up a critical worldwide datacenter infrastructure project by one year\newline
 \phantom{w}Coauthored \href{https://landing.google.com/sre/workbook/chapters/overload/}{the chapter on managing overload} in \textit{\href{https://landing.google.com/sre/books/}{The Site Reliability Workbook}}\newline
@@ -197,66 +201,37 @@ urlcolor=blue
 
 \SmallEntryGap
 
-\textbf{Google}, Apps Storage SRE, Switzerland \textemdash\ Tech Lead\hfill \DatestampY{2014}--\DatestampY{2017}\newline
+\textbf{Tech Lead}. Google, Apps Storage SRE\hfill \DatestampY{2016}--\DatestampY{2017}\newline
 \phantom{w}Rebuilt the team from three to eight members and trained a tech lead\newline
-\phantom{w}Decreased the cost of a storage service with +700M users by 75\%\newline
 \phantom{w}Pioneered the design and execution of time-sensitive production changes
 
 \SmallEntryGap
 
-\textbf{Universidad de Granada}, Department of Computer Science, Spain \textemdash\ Professor Trainee\hfill \DatestampY{2010}--\DatestampY{2014} \newline
-\phantom{w}\href{https://doi.org/10.1142/S0218194014500375}{Researched} and \href{https://github.com/lquesada/ModelCC}{developed} a model-based parser generator \newline
-\phantom{w}\href{https://doi.org/10.1142/S0129065712500190}{Researched} and \href{https://github.com/lquesada/MotionTracking}{developed} markerless monocular 3-DOF motion tracking \newline
-\phantom{w}Directed a Master Thesis on \href{https://github.com/lquesada/ADAgio}{music prototyping languages}, Best Thesis Award
+\textbf{Site Reliability Engineer}. Google, Apps Storage SRE\hfill \DatestampY{2014}--\DatestampY{2016}\newline
+\phantom{w}Decreased the cost of a storage service with 700M+ users by 75\%\newline
+\phantom{w}Developed automation and monitoring solutions
 
 %%%%%%%%%%%%%%%
-%% EDUCATION %%
+%% STUDIES %%
 %%%%%%%%%%%%%%%
 
-\section{Education}{Education}{PDF:Education}
+\section{Academia}{Academia}{PDF:Academia}
 
-\textbf{MRes in Soft Computing and Intelligent Systems}, Universidad de Granada, Spain\hfill \DatestampY{2009}--\DatestampY{2010} \newline
-\phantom{w}Grade Point Average of 9.3/10
-
-\SmallEntryGap
-
-\textbf{BSc in Information Systems Engineering}, Universidad de Granada, Spain\hfill \DatestampY{2009}--\DatestampY{2010} \newline
-\phantom{w}Grade Point Average of 8.7/10 and First of Class
-
-\SmallEntryGap
-
-\textbf{MSc in Computer Science}, Universidad de Granada, Spain\hfill \DatestampY{2007}--\DatestampY{2009} \newline
-\phantom{w}Grade Point Average of 9.2/10, First of Class, National Award, and Distinction \newline
-\phantom{w}\href{https://doi.org/10.5220/0003013403330336}{Researched} and \href{https://github.com/lquesada/JSimil}{developed} a Java code clone detector as Thesis, Best Thesis Award
-
-\SmallEntryGap
-
-\textbf{BSc in Computer Systems Engineering}, Universidad de Granada, Spain\hfill \DatestampY{2004}--\DatestampY{2007} \newline
-\phantom{w}Grade Point Average of 8.7/10 and First of Class
+\textbf{Professor Trainee} on \href{https://github.com/lquesada/ModelCC}{parsers} and \href{https://github.com/lquesada/MotionTracking}{vision}, best \href{https://github.com/lquesada/ADAgio}{thesis} award as director. Universidad de Granada\hfill \DatestampY{2010}--\DatestampY{2014} \newline
+\textbf{MRes Soft Computing and Intelligent Systems.} GPA 9.3/10. Universidad de Granada\hfill \DatestampY{2009}--\DatestampY{2010} \newline
+\textbf{BSc Information Systems Engineering.} GPA 8.7/10, first of class. Universidad de Granada\hfill \DatestampY{2009}--\DatestampY{2010} \newline
+\textbf{MSc Computer Science.} GPA\,9.2/10,\,national and best \href{https://github.com/lquesada/JSimil}{thesis} awards.\,Universidad de Granada\hfill \DatestampY{2007}--\DatestampY{2009} \newline
+\textbf{BSc Computer Systems Engineering.} GPA 8.7/10, first of class. Universidad de Granada\hfill \DatestampY{2004}--\DatestampY{2007}
 
 %%%%%%%%%%%%%%%
 %% INTERESTS %%
 %%%%%%%%%%%%%%%
 
-\section{Interests}{Interests}{PDF:Open Source}
+\section{Interests}{Interests}{PDF:Interests}
 
-Developed videogame prototypes in \href{https://github.com/lquesada/LifoSource}{PHP}, \href{https://github.com/lquesada/SpaceARMy}{C}, \href{https://github.com/lquesada/RogueCave}{Java}, \href{https://github.com/lquesada/PhysicsEngine}{GameMaker}, and \href{https://github.com/lquesada/Cavernal}{Go}
-
-\SmallEntryGap
-
-Assembled a \href{https://github.com/lquesada/Lingvaro}{dictionary} cross Spanish, English, German, Esperanto, and Swiss German
-
-\SmallEntryGap
-
+Developed videogame prototypes in \href{https://github.com/lquesada/LifoSource}{PHP}, \href{https://github.com/lquesada/SpaceARMy}{C}, \href{https://github.com/lquesada/RogueCave}{Java}, \href{https://github.com/lquesada/PhysicsEngine}{GameMaker}, and \href{https://github.com/lquesada/Cavernal}{Go} \newline
+Assembled a \href{https://github.com/lquesada/Lingvaro}{dictionary} cross Spanish, English, German, Esperanto, and Swiss German \newline
 Composed and produced \href{https://github.com/lquesada/music}{music demos}, plays guitar and piano, and sings
-
-\SmallEntryGap
-
-Published \href{https://github.com/lquesada/voxel-3d-models}{voxel-based 3D models and tools}
-
-\SmallEntryGap
-
-Skateboarding, surf skating, bouldering, archery, and laser tag
 
 \end{body}
 
