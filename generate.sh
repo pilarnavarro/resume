@@ -1,16 +1,6 @@
 #!/bin/bash
 xelatex resume.tex
 ADD=$(cat << EOM | tr -d '\n'
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https:\/\/www.googletagmanager.com\/gtag\/js?id=UA-167581002-1"><\/script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-167581002-1');
-<\/script>
 <title>Luis Quesada Torres - Resume<\\/title>
 <link rel="shortcut icon" type="image\\/png" href="\\/favicon.png"\\/>
 EOM
